@@ -1,5 +1,19 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
+calculAge(1996);
+
+function calculAge(year) {
+  console.log(2020 - year);
+}
+
+
+
+const retirement = (year) => {
+  console.log(65 - (2020 - year ));
+}
+
+retirement(1956)
+
 
 
 
@@ -42,25 +56,25 @@ function first() {
 
 // Example to show the differece between execution stack and scope chain
 
-/*
+
 var a = 'Hello!';
 first();
 
-function first() {
+function() {
     var b = 'Hi!';
     second();
-
-    function second() {
+    function() {
         var c = 'Hey!';
         third()
     }
-}
-
-function third() {
+    function() {
     var d = 'John';
+    }
     console.log(a + b + c + d);
 }
-*/
+
+
+
 
 
 
