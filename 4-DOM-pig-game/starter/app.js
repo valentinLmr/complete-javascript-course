@@ -77,3 +77,4 @@ function init(){
   document.querySelector('.player-0-panel').classList.add('winner');
   document.querySelector('.player-1-panel').classList.add('winner');
 }
+
