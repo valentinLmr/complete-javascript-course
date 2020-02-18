@@ -78,8 +78,3 @@ function init(){
   document.querySelector('.player-1-panel').classList.add('winner');
 }
 
-
-
-
-
-
