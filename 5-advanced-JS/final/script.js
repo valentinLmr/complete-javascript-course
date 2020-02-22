@@ -329,54 +329,62 @@ c) correct answer (I would use a number for this)
 */
 
 
-/*
-(function() {
-    function Question(question, answers, correct) {
-        this.question = question;
-        this.answers = answers;
-        this.correct = correct;
-    }
 
-    Question.prototype.displayQuestion = function() {
-        console.log(this.question);
 
-        for (var i = 0; i < this.answers.length; i++) {
-            console.log(i + ': ' + this.answers[i]);
-        }
-    }
 
-    Question.prototype.checkAnswer = function(ans) {
-        if (ans === this.correct) {
-            console.log('Correct answer!');
+// (function (){
 
-        } else {
-            console.log('Wrong answer. Try again :)')
-        }
-    }
+//   function Question(question, answers, correct){
+//     this.question = question;
+//     this.answers = answers;
+//     this.correct = correct;
+//   }
 
-    var q1 = new Question('Is JavaScript the coolest programming language in the world?',
-                          ['Yes', 'No'],
-                          0);
+//   q1 = new Question('Comment je m\'appelle ?',
+//                     ['valentin', 'simon', 'benjamin'],
+//                     0);
+//   q2 = new Question('quel est mon nom de famille',
+//                     ['lemaire', 'halluin', 'braye'],
+//                     0);
+//   q3 = new Question('quel est mon age ?',
+//                     ['21', '23', '24'],
+//                     2);
 
-    var q2 = new Question('What is the name of this course\'s teacher?',
-                          ['John', 'Micheal', 'Jonas'],
-                          2);
+//   let questions = [q1, q2, q3];
 
-    var q3 = new Question('What does best describe coding?',
-                          ['Boring', 'Hard', 'Fun', 'Tediuos'],
-                          2);
+//   Question.prototype.displayQuestion = function() {
+//     console.log(this.question);
+//     for(i = 0; i < this.answers.length; i++){
+//       console.log(i + ':' + this.answers[i]);
+//     }
+//   }
 
-    var questions = [q1, q2, q3];
+//   Question.prototype.checkAnswer = function(ans) {
+//     if(ans === 'exit'){
+//       console.log('thanks to have play')
+//     }else if (ans === this.correct){
+//       console.log('Right Answer');
+//     } else {
+//       console.log('Wrong Answer, try again');
+//     }
+//     console.log("-----------------");
+//   }
 
-    var n = Math.floor(Math.random() * questions.length);
+//   function score(){
+//   }
 
-    questions[n].displayQuestion();
+//   function nextQuestion() {
+//     const n = Math.floor(Math.random() * questions.length);
+//     questions[n].displayQuestion();
+//       let answer = parseInt(prompt('Please select the correct answer or tap exit to quit.'));
 
-    var answer = parseInt(prompt('Please select the correct answer.'));
+//     if(answer === 'exit'){
+//      console.log('thanks for play')
+//     }
+//   }
+//   nextQuestion();
+// }());
 
-    questions[n].checkAnswer(answer);
-})();
-*/
 
 
 
@@ -393,7 +401,7 @@ c) correct answer (I would use a number for this)
 */
 
 
-/*
+
 (function() {
     function Question(question, answers, correct) {
         this.question = question;
@@ -411,7 +419,7 @@ c) correct answer (I would use a number for this)
 
     Question.prototype.checkAnswer = function(ans, callback) {
         var sc;
-        
+
         if (ans === this.correct) {
             console.log('Correct answer!');
             sc = callback(true);
@@ -419,7 +427,7 @@ c) correct answer (I would use a number for this)
             console.log('Wrong answer. Try again :)');
             sc = callback(false);
         }
-        
+
         this.displayScore(sc);
     }
 
@@ -427,8 +435,8 @@ c) correct answer (I would use a number for this)
         console.log('Your current score is: ' + score);
         console.log('------------------------------');
     }
-    
-    
+
+
     var q1 = new Question('Is JavaScript the coolest programming language in the world?',
                           ['Yes', 'No'],
                           0);
@@ -440,9 +448,9 @@ c) correct answer (I would use a number for this)
     var q3 = new Question('What does best describe coding?',
                           ['Boring', 'Hard', 'Fun', 'Tediuos'],
                           2);
-    
+
     var questions = [q1, q2, q3];
-    
+
     function score() {
         var sc = 0;
         return function(correct) {
@@ -453,8 +461,8 @@ c) correct answer (I would use a number for this)
         }
     }
     var keepScore = score();
-    
-    
+
+
     function nextQuestion() {
 
         var n = Math.floor(Math.random() * questions.length);
@@ -464,12 +472,12 @@ c) correct answer (I would use a number for this)
 
         if(answer !== 'exit') {
             questions[n].checkAnswer(parseInt(answer), keepScore);
-            
+
             nextQuestion();
         }
     }
-    
+
     nextQuestion();
-    
+
 })();
-*/
+
